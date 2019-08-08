@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F6F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/White"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/peso" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/peso_small" />
+
+                <com.decideme.recruit.attributes.CustomTextview
+                    android:id="@+id/tv_earning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="0.00"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    app:fontName="@string/font_bold" />
+
+            </LinearLayout>
+
+            <com.decideme.recruit.attributes.CustomTextview
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="8dp"
+                android:text="Outstanding Balance"
+                android:textColor="@color/font_color"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:text="Notes"
+            android:textColor="@color/font_color"
+            android:textSize="14sp"
+            app:fontName="@string/font_regular" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.4"
+            android:background="@mipmap/sap" />
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:id="@+id/tv_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:textColor="#808080"
+            android:textSize="14sp"
+            app:fontName="@string/font_regular" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_settle_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:background="@mipmap/upload_pdf"
+        android:gravity="center_vertical|center_horizontal">
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Amount"
+            android:textColor="@color/font_color"
+            android:textSize="14sp"
+            app:fontName="@string/font_bold" />
+
+        <com.decideme.recruit.attributes.CustomEditText
+            android:id="@+id/et_money"
+            android:layout_width="100dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/rectangle1"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="5"
+            android:singleLine="true"
+            android:textColor="@color/font_color"
+            android:textSize="15sp"
+            app:fontName="@string/font_regular" />
+
+        <com.decideme.recruit.attributes.CustomButton
+            android:id="@+id/btn_settle"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/btn"
+            android:text="SETTLE"
+            android:inputType="number"
+            android:textColor="@color/White"
+            android:textSize="13sp"
+            app:fontName="@string/font_bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

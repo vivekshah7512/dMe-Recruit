@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item>
+                <shape>
+                    <gradient android:angle="90.0" android:endColor="@android:color/transparent" android:startColor="@android:color/transparent" android:type="linear" />
+                    <corners android:radius="2dp" />
+                </shape>
+            </item>
+            <item android:right="12dp">
+                <bitmap android:gravity="right" android:src="@mipmap/down" />
+            </item>
+        </layer-list>
+    </item>
+</selector>

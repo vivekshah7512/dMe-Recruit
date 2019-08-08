@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_bg"
+    android:orientation="vertical"
+    tools:context="com.decideme.recruit.activities.RegistrationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/dme" />
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rectangle_rounded"
+            android:paddingLeft="12dp"
+            android:paddingTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="1dp"
+            android:text="Serv"
+            android:textColor="@color/White"
+            android:textSize="16sp"
+            app:fontName="@string/font_bold" />
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="Register"
+            android:textAllCaps="true"
+            android:textColor="@color/font_color"
+            android:textSize="20sp"
+            app:fontName="@string/font_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/reg_feild_base"
+            android:orientation="vertical"
+            android:weightSum="6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.decideme.recruit.attributes.CustomEditText
+                    android:id="@+id/et_reg_first_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@null"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                    android:gravity="center_vertical"
+                    android:hint="First Name"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    app:fontName="@string/font_regular" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@mipmap/sap" />
+
+                <com.decideme.recruit.attributes.CustomEditText
+                    android:id="@+id/et_reg_last_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@null"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                    android:gravity="center_vertical"
+                    android:hint="Last Name"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    app:fontName="@string/font_regular" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@mipmap/sap" />
+
+            <com.decideme.recruit.attributes.CustomEditText
+                android:id="@+id/et_reg_email"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="Email ID"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:singleLine="true"
+                android:textSize="14sp"
+                app:fontName="@string/font_regular" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@mipmap/sap" />
+
+            <Spinner
+                android:id="@+id/sp_category"
+                style="@style/spinner_style"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:popupBackground="@drawable/spinner_dropdown_bg" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@mipmap/sap" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.decideme.recruit.attributes.CustomEditText
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.20"
+                    android:background="@null"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:singleLine="true"
+                    android:text="+63"
+                    android:textSize="14sp"
+                    app:fontName="@string/font_regular" />
+
+                <com.decideme.recruit.attributes.CustomEditText
+                    android:id="@+id/et_reg_mobile"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.8"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="10-Digits Mobile Number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    app:fontName="@string/font_regular" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@mipmap/sap" />
+
+            <com.decideme.recruit.attributes.CustomEditText
+                android:id="@+id/et_reg_pass"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:singleLine="true"
+                android:textSize="14sp"
+                app:fontName="@string/font_regular" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@mipmap/sap" />
+
+            <com.decideme.recruit.attributes.CustomEditText
+                android:id="@+id/et_reg_confirm_pass"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:singleLine="true"
+                android:textSize="14sp"
+                app:fontName="@string/font_regular" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_upload_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@mipmap/upload_pdf"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/upload_icon" />
+
+                <com.decideme.recruit.attributes.CustomTextview
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:text="Upload PDF"
+                    android:textAllCaps="false"
+                    android:textColor="@color/font_color"
+                    android:textSize="13sp"
+                    app:fontName="@string/font_bold" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:id="@+id/tv_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="1dp"
+            android:textAllCaps="false"
+            android:textColor="@color/font_color"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:fontName="@string/font_regular" />
+
+        <com.decideme.recruit.attributes.CustomButton
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/btn_login"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:textColor="@color/White"
+            android:textSize="15sp"
+            app:fontName="@string/font_bold" />
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="By signing up, you agree to our"
+            android:textColor="@color/White"
+            android:textSize="14sp"
+            app:fontName="@string/font_regular" />
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:id="@+id/tv_terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/White"
+            android:textSize="14sp"
+            app:fontName="@string/font_regular" />
+
+    </LinearLayout>
+
+    <com.decideme.recruit.attributes.CustomTextview
+        android:id="@+id/tv_register_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="Already Have An Account ?"
+        android:textColor="@color/font_color"
+        android:textSize="15sp"
+        app:fontName="@string/font_regular" />
+
+</RelativeLayout>

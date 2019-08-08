@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/custom_toolbar" />
+
+    <com.decideme.recruit.attributes.ExpandableHeightListView
+        android:id="@+id/list_chat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_chat"
+        android:layout_below="@+id/toolbar"
+        android:layout_weight="20"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="5dp"
+        android:paddingBottom="1dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="1dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll" />
+
+    <LinearLayout
+        android:id="@+id/ll_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.90"
+            android:background="@mipmap/type_feild">
+
+            <ImageView
+                android:id="@+id/img_chat_smiley"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/smiley"
+                android:visibility="gone" />
+
+            <com.decideme.recruit.attributes.CustomEditText
+                android:id="@+id/et_chat_message"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:hint="Write a message"
+                android:imeOptions="actionSend|flagNoEnterAction"
+                android:inputType="textShortMessage|textAutoCorrect|textCapSentences|textMultiLine"
+                android:padding="5dp"
+                android:textColor="@color/Black1"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_send"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.10"
+            android:background="@drawable/oval">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/check" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

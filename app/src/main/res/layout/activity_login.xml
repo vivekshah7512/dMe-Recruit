@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_bg"
+    tools:context="com.decideme.recruit.activities.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/dme" />
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rectangle_rounded"
+            android:paddingLeft="12dp"
+            android:paddingTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="1dp"
+            android:text="Serv"
+            android:textColor="@color/White"
+            android:textSize="16sp"
+            app:fontName="@string/font_bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <com.decideme.recruit.attributes.CustomTextview
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Login"
+            android:textAllCaps="true"
+            android:textColor="@color/font_color"
+            android:textSize="20sp"
+            app:fontName="@string/font_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@mipmap/feild_base"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.decideme.recruit.attributes.CustomEditText
+                    android:id="@+id/et_login_username"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.9"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="Email / 10-Digits Mobile"
+                    android:paddingLeft="20dp"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    app:fontName="@string/font_regular" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.1"
+                    android:padding="10dp"
+                    android:src="@mipmap/username" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@mipmap/sap" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.decideme.recruit.attributes.CustomEditText
+                    android:id="@+id/et_login_password"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.9"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="20dp"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    app:fontName="@string/font_regular" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.1"
+                    android:padding="10dp"
+                    android:src="@mipmap/lock" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp">
+
+            <CheckBox
+                android:id="@+id/check_remember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/checkbox_selector_remember_me"
+                android:paddingLeft="8dp"
+                android:text="Remember me"
+                android:textColor="@color/font_color"
+                android:textSize="15sp" />
+
+            <com.decideme.recruit.attributes.CustomTextview
+                android:id="@+id/tv_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Forgot Password?"
+                android:textColor="@color/font_color"
+                android:textSize="15sp"
+                app:fontName="@string/font_regular" />
+
+        </RelativeLayout>
+
+        <com.decideme.recruit.attributes.CustomButton
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/ko_btn"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@color/White"
+            android:textSize="15sp"
+            app:fontName="@string/font_bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.decideme.recruit.attributes.CustomTextview
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="New Here ? "
+                android:textColor="@color/font_color"
+                android:textSize="15sp"
+                app:fontName="@string/font_regular" />
+
+            <com.decideme.recruit.attributes.CustomTextview
+                android:id="@+id/tv_login_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Create Account"
+                android:textColor="@color/font_color"
+                android:textSize="15sp"
+                app:fontName="@string/font_regular" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

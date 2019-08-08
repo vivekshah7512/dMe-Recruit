@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">dMe Serv</string>
+
+    <string name="font_bold">Roboto-Bold.ttf</string>
+    <string name="font_light">Roboto-Light.ttf</string>
+    <string name="font_regular">Roboto-Regular.ttf</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

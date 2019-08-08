@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "394893415298",
+    "firebase_url": "https://dmerecruitandroid.firebaseio.com",
+    "project_id": "dmerecruitandroid",
+    "storage_bucket": "dmerecruitandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394893415298:android:2b98ff35d2ed14cf",
+        "android_client_info": {
+          "package_name": "com.decideme.recruit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394893415298-4iotpolmk8ufnl902nru95q5ievlj3c4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.decideme.recruit",
+            "certificate_hash": "af93b1f3589fc42683a5321e308212a32dc42909"
+          }
+        },
+        {
+          "client_id": "394893415298-4bs5phv2lgalgmrl1fimfvrsl9ehj8la.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.decideme.recruit",
+            "certificate_hash": "bd009c1db0d86a87c4d0212515868808bbded674"
+          }
+        },
+        {
+          "client_id": "394893415298-eu0r6iij7lde28p5vbl5qbbg0rfb9dn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVUjdgR1v7cjjA6Rcyj2g9XvfjGaulq2I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394893415298-eu0r6iij7lde28p5vbl5qbbg0rfb9dn6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
