@@ -504,6 +504,13 @@ public class HomeActivity extends AppCompatActivity
                 fragmentTransaction.addToBackStack(BACK_STACK_ROOT_TAG);
                 fragmentTransaction.commit();
             }
+        } else if (id == R.id.nav_share) {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "Check out the App at: \n" +
+                    "https://play.google.com/store/apps/details?id=com.decideme.recruit&hl=en");
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

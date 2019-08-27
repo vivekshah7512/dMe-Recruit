@@ -365,7 +365,7 @@ public class Utility {
 
     public static void showDialogOK(Context c, String message, DialogInterface.OnClickListener okListener) {
         new AlertDialog.Builder(c)
-                .setTitle("dMe Serv")
+                .setTitle("dMe Job")
                 .setMessage(message)
                 .setPositiveButton("OK", okListener)
                 .setNegativeButton("Cancel", okListener)

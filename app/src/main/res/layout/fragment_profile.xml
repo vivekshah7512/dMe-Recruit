@@ -31,18 +31,18 @@
                         android:id="@+id/img_profile"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:scaleType="centerCrop"
                         android:layout_centerHorizontal="true"
+                        android:scaleType="centerCrop"
                         android:src="@mipmap/user" />
 
                     <RelativeLayout
                         android:id="@+id/rl_profile_edit"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:visibility="gone"
                         android:layout_marginLeft="60dp"
                         android:layout_marginTop="50dp"
-                        android:background="@mipmap/circle">
+                        android:background="@mipmap/circle"
+                        android:visibility="gone">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -60,8 +60,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="12dp"
                     android:singleLine="true"
                     android:textColor="@color/font_color"
                     android:textSize="18sp"
@@ -89,6 +89,7 @@
                         android:layout_marginLeft="5dp"
                         android:textColor="@color/Black1"
                         android:textSize="12sp"
+                        android:visibility="gone"
                         app:fontName="@string/font_regular" />
 
                 </LinearLayout>
@@ -118,9 +119,9 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/White"
+                android:enabled="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
-                android:enabled="false"
                 android:singleLine="true"
                 android:textColor="@color/font_color"
                 android:textSize="14sp"
@@ -142,8 +143,8 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/White"
-                android:gravity="center_vertical"
                 android:enabled="false"
+                android:gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:singleLine="true"
                 android:textColor="@color/font_color"
@@ -166,9 +167,9 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/White"
+                android:enabled="false"
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
-                android:enabled="false"
                 android:singleLine="true"
                 android:textColor="@color/font_color"
                 android:textSize="14sp"
@@ -178,8 +179,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp">
 
                 <com.decideme.recruit.attributes.CustomTextview
                     android:layout_width="wrap_content"
@@ -190,12 +191,12 @@
                     app:fontName="@string/font_bold" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:id="@+id/img_address_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:src="@mipmap/edit_icon" />
+                    android:src="@mipmap/edit_icon"
+                    android:visibility="gone" />
 
             </RelativeLayout>
 
@@ -226,9 +227,9 @@
         android:layout_marginBottom="12dp"
         android:background="@mipmap/btn_login"
         android:text="Submit"
-        android:visibility="gone"
         android:textColor="@color/White"
         android:textSize="15sp"
+        android:visibility="gone"
         app:fontName="@string/font_bold" />
 
     <com.decideme.recruit.attributes.CustomButton

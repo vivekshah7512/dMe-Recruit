@@ -35,7 +35,7 @@
                 android:paddingTop="1dp"
                 android:paddingRight="12dp"
                 android:paddingBottom="1dp"
-                android:text="Serv"
+                android:text="Job"
                 android:textColor="@color/White"
                 android:textSize="16sp"
                 app:fontName="@string/font_bold" />

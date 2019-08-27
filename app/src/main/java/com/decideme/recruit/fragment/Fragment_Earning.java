@@ -172,7 +172,9 @@ public class Fragment_Earning extends Fragment implements View.OnClickListener,
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         mPayMayaCheckout.onActivityResult(requestCode, resultCode, data);
-        order_id = data.getStringExtra("checkoutId");
+        if (data != null) {
+            order_id = data.getStringExtra("checkoutId");
+        }
     }
 
     public class getEarning extends AsyncTask<String, Integer, Object> {

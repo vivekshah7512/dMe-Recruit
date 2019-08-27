@@ -222,7 +222,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     Utility.writeSharedPreferences(this, "chat_from", "notification");
                     Utility.writeSharedPreferences(getApplicationContext(), "data_flag", "false");
                     Intent intent = new Intent(this, ChatActivity.class);
-                    intent.putExtra("chatFrom","notification");
+                    intent.putExtra("chatFrom", "notification");
                     intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
@@ -294,7 +294,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             intent.putExtra("user_image", user_image);
             intent.putExtra("user_name", user_name);
             intent.putExtra("user_mobile", user_mobile);
-            intent.putExtra("chatFrom","notification");
+            intent.putExtra("chatFrom", "notification");
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         } else if (type.equalsIgnoreCase("cancelinterview")) {
             Utility.writeSharedPreferences(getApplicationContext(), "accept_dialog_flag", "0");
