@@ -47,15 +47,14 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     public static boolean active = false;
     Toolbar toolbarTop;
     private Context mContext;
-    private TextView tv_name, tv_job_type;
+    private TextView tv_name;
     private ImageView img_profile, img_call, img_back;
     private ImageView img_smiley;
     private EditText et_message;
     private RelativeLayout rl_send;
     private ExpandableHeightListView listView;
     private com.decideme.recruit.adapter.ChatListAdapter ChatListAdapter;
-    private String worker_latitude = "", worker_longitude = "", worker_id = "",
-            notification_id = "", user_id = "", phone = "", from = "";
+    private String worker_id = "", phone = "", from = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +67,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(ContextCompat.getColor(ChatActivity.this, R.color.actionbar_color));
         }
+
         setContentView(R.layout.activity_chat);
 
         toolbarTop = (Toolbar) findViewById(R.id.toolbar_top);
@@ -117,7 +117,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     private void initUI() {
 
         tv_name = (TextView) findViewById(R.id.tv_chat_from_name);
-        tv_job_type = (TextView) findViewById(R.id.tv_chat_from_job_type);
         img_profile = (ImageView) findViewById(R.id.img_chat_from_profile);
         img_call = (ImageView) findViewById(R.id.img_chat_from_call);
         img_call.setOnClickListener(this);
@@ -133,7 +132,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         try {
             Intent intent = getIntent();
             worker_id = intent.getStringExtra("worker_id");
-            notification_id = intent.getStringExtra("notification_id");
             tv_name.setText(intent.getStringExtra("user_name"));
             phone = intent.getStringExtra("user_mobile");
             from = intent.getStringExtra("chatFrom");

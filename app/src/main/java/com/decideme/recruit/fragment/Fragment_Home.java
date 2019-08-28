@@ -593,7 +593,6 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
     public void onStop() {
         super.onStop();
         gps.stopGPS();
-        active = false;
     }
 
     @Override
