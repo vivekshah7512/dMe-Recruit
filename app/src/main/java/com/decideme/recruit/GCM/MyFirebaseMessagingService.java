@@ -90,7 +90,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    } else if (request_type != null && request_type.equalsIgnoreCase("ACCEPT_ONDEMAND")) {
+                    } else if (request_type != null && request_type.equalsIgnoreCase("ACCEPT_ONDEMAND") &&
+                            !Utility.getAppPrefString(getApplicationContext(), "overlap_req").equalsIgnoreCase("1")) {
                         try {
                             user_pic = jobject.getString("user_pic");
                             user_mobile = jobject.getString("user_mobile");

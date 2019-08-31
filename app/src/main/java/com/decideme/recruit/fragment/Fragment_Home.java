@@ -1,6 +1,5 @@
 package com.decideme.recruit.fragment;
 
-import android.Manifest;
 import android.animation.ValueAnimator;
 import android.app.ActionBar;
 import android.app.AlertDialog;
@@ -14,7 +13,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -30,7 +28,6 @@ import android.os.CountDownTimer;
 import android.os.SystemClock;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -186,6 +183,7 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
                     }
                 }
                 count.cancel();
+                Utility.writeSharedPreferences(getActivity(), "overlap_req", "0");
                 ll_timer.setVisibility(View.GONE);
 
                 ll_interviewed.setVisibility(View.GONE);
@@ -326,6 +324,7 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
             ll_timer.setVisibility(View.VISIBLE);
 
             if (!isRunning) {
+                Utility.writeSharedPreferences(getActivity(), "overlap_req", "1");
                 count = new count(61000, 1000);
                 count.start();
             }
@@ -714,11 +713,8 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
                 }
                 break;
             case R.id.rl_call:
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
                 callIntent.setData(Uri.parse("tel:" + "+63" + user_mobile));
-                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
                 startActivity(callIntent);
                 break;
             case R.id.rl_chat:
@@ -733,18 +729,8 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
                 startActivity(intent_chat);
                 break;
             case R.id.rl_start_call:
-                Intent callIntent1 = new Intent(Intent.ACTION_CALL);
+                Intent callIntent1 = new Intent(Intent.ACTION_DIAL);
                 callIntent1.setData(Uri.parse("tel:" + "+63" + user_mobile));
-                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
-                }
                 startActivity(callIntent1);
                 break;
             case R.id.rl_start_chat:
@@ -770,6 +756,7 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
                 break;
             case R.id.btn_ar_accept:
                 count.cancel();
+                Utility.writeSharedPreferences(getActivity(), "overlap_req", "0");
                 Utility.writeSharedPreferences(getActivity(), "accept_dialog_flag", "0");
                 ll_timer.setVisibility(View.GONE);
                 type = "accept";
@@ -784,6 +771,7 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
                 break;
             case R.id.btn_ar_reject:
                 count.cancel();
+                Utility.writeSharedPreferences(getActivity(), "overlap_req", "0");
                 Utility.writeSharedPreferences(getActivity(), "accept_dialog_flag", "0");
                 ll_timer.setVisibility(View.GONE);
                 ll_interviewed.setVisibility(View.GONE);
@@ -881,6 +869,7 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
 
             ll_timer.setVisibility(View.VISIBLE);
             if (!isRunning) {
+                Utility.writeSharedPreferences(getActivity(), "overlap_req", "1");
                 count = new count(61000, 1000);
                 count.start();
             }
@@ -923,6 +912,7 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
                 }
             }
             count.cancel();
+            Utility.writeSharedPreferences(getActivity(), "overlap_req", "0");
             ll_timer.setVisibility(View.GONE);
 
             ll_interviewed.setVisibility(View.GONE);
@@ -2559,6 +2549,7 @@ public class Fragment_Home extends Fragment implements GPS_Fused.IGPSActivity,
                 if (Utility.getAppPrefString(getActivity(), "accept_dialog_flag")
                         .equalsIgnoreCase("1")) {
                     count.cancel();
+                    Utility.writeSharedPreferences(getActivity(), "overlap_req", "0");
                     removeRequest();
                     isRunning = false;
                     ll_accept_reject.setVisibility(View.GONE);
