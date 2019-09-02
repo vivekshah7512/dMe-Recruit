@@ -57,10 +57,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             if (notification_type.equalsIgnoreCase("cancelRequest")) {
                 title = (String) data.get("message");
                 message = jobject.getString("message");
+                notification_id = jobject.getString("notification_id");
+                service_id = jobject.getString("service_id");
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        /*{data={"notification_type":"cancelRequest","request_type":"cancelRequest","service_id":"11707",
+                "notification_id":"51028831250","message":"Client has been cancel service request"},
+            message=Client has been cancel service request}*/
+
+//        "notification_id":51028831250,"service_id":11707
 
         if (Utility.getAppPrefString(getApplicationContext(), "login").equalsIgnoreCase("true")) {
 
@@ -253,7 +261,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 if (Utility.getAppPrefString(getApplicationContext(), "switch_mode") == null ||
                         Utility.getAppPrefString(getApplicationContext(), "switch_mode").equalsIgnoreCase("") ||
                         Utility.getAppPrefString(getApplicationContext(), "switch_mode").equalsIgnoreCase("on")) {
-                    createNotification(message, "Request Cancelled", notification_type);
+                    if (notification_id.equalsIgnoreCase(Utility.getAppPrefString(this, "noti_notification_id")))
+                        createNotification(message, "Request Cancelled", notification_type);
+                    else
+                        Log.v("Cancel req : ", "Not Same");
                 } else {
                     Log.v("Notification", "OFF");
                 }
