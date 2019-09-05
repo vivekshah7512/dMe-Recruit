@@ -140,44 +140,45 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                             e.printStackTrace();
                         }
                     } else {
-                        try {
-                            user_pic = jobject.getString("user_pic");
-                            user_mobile = jobject.getString("user_mobile");
-                            notification_id = jobject.getString("notification_id");
-                            user_longitude = jobject.getString("user_longitude");
-                            user_rating = jobject.getString("user_rating");
-                            user_latitude = jobject.getString("user_latitude");
-                            user_name = jobject.getString("user_name");
-//                        total_review = jobject.getString("user_total_review");
-                            user_id = jobject.getString("user_id");
-                            type = jobject.getString("type");
-                            date = jobject.getString("date");
-                            time = jobject.getString("time");
-                            service_id = jobject.getString("service_id");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                        if (!Utility.getAppPrefString(getApplicationContext(), "overlap_req").equalsIgnoreCase("1")) {
+                            try {
+                                user_pic = jobject.getString("user_pic");
+                                user_mobile = jobject.getString("user_mobile");
+                                notification_id = jobject.getString("notification_id");
+                                user_longitude = jobject.getString("user_longitude");
+                                user_rating = jobject.getString("user_rating");
+                                user_latitude = jobject.getString("user_latitude");
+                                user_name = jobject.getString("user_name");
+                                user_id = jobject.getString("user_id");
+                                type = jobject.getString("type");
+                                date = jobject.getString("date");
+                                time = jobject.getString("time");
+                                service_id = jobject.getString("service_id");
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                            Utility.writeSharedPreferences(getApplicationContext(), "request", "normal");
+                            Utility.writeSharedPreferences(getApplicationContext(), "accept_dialog_flag", "1");
+                            Utility.writeSharedPreferences(getApplicationContext(), "data_flag", "false");
+                            Utility.writeSharedPreferences(getApplicationContext(), "from", "noti");
+
+                            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                            Utility.writeSharedPreferences(this, "noti_user_pic", user_pic);
+                            Utility.writeSharedPreferences(this, "noti_user_mobile", user_mobile);
+                            Utility.writeSharedPreferences(this, "noti_notification_id", notification_id);
+                            Utility.writeSharedPreferences(this, "noti_user_longitude", user_longitude);
+                            Utility.writeSharedPreferences(this, "noti_user_latitude", user_latitude);
+                            Utility.writeSharedPreferences(this, "noti_user_rating", user_rating);
+                            Utility.writeSharedPreferences(this, "noti_user_name", user_name);
+                            Utility.writeSharedPreferences(this, "noti_user_id", user_id);
+                            Utility.writeSharedPreferences(this, "noti_type", type);
+                            Utility.writeSharedPreferences(this, "noti_date", date);
+                            Utility.writeSharedPreferences(this, "noti_time", time);
+                            Utility.writeSharedPreferences(this, "noti_service_id", service_id);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
                         }
-
-                        Utility.writeSharedPreferences(getApplicationContext(), "request", "normal");
-                        Utility.writeSharedPreferences(getApplicationContext(), "accept_dialog_flag", "1");
-                        Utility.writeSharedPreferences(getApplicationContext(), "data_flag", "false");
-                        Utility.writeSharedPreferences(getApplicationContext(), "from", "noti");
-
-                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                        Utility.writeSharedPreferences(this, "noti_user_pic", user_pic);
-                        Utility.writeSharedPreferences(this, "noti_user_mobile", user_mobile);
-                        Utility.writeSharedPreferences(this, "noti_notification_id", notification_id);
-                        Utility.writeSharedPreferences(this, "noti_user_longitude", user_longitude);
-                        Utility.writeSharedPreferences(this, "noti_user_latitude", user_latitude);
-                        Utility.writeSharedPreferences(this, "noti_user_rating", user_rating);
-                        Utility.writeSharedPreferences(this, "noti_user_name", user_name);
-                        Utility.writeSharedPreferences(this, "noti_user_id", user_id);
-                        Utility.writeSharedPreferences(this, "noti_type", type);
-                        Utility.writeSharedPreferences(this, "noti_date", date);
-                        Utility.writeSharedPreferences(this, "noti_time", time);
-                        Utility.writeSharedPreferences(this, "noti_service_id", service_id);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
                     }
                 } else {
                     Log.v("Notification", "OFF");
@@ -387,3 +388,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         nm.notify(new Random().nextInt(), notification);
     }
 }
+
+
+/*
+D/MyFirebaseMsgService: Received message {data={"notification_type":"Request","date":"","request_type":"ACCEPT_ONDEMAND",
+        "user_name":"test","total_review":0,"notification_id":62178786373,"type":"normal","user_longitude":"72.51111276447773",
+        "user_latitude":"23.036221634876267","user_pic":"https:\/\/www.decidemejob.com\/API\/public\/images\/clientimg\/" +
+        "dummy_image.png","user_mobile":"9016098236","user_id":"2367","service_id":11762,"time":"","job_location":"test",
+        "user_rating":0}, message=Request Service}
+
+D/MyFirebaseMsgService: Received message {data={"notification_type":"Request","date":"","request_type":"ACCEPT_ONDEMAND",
+        "user_name":"Vivek Shah","total_review":0,"notification_id":53876942409,"type":"normal",
+        "user_longitude":"72.51113690435886","user_latitude":"23.036200345585467",
+        "user_pic":"https:\/\/lh3.googleusercontent.com\/a-\/AAuE7mA0QCv_zF2dXIezRAzftJVAWtOiiAh3B8pFJjrYaA",
+        "user_mobile":"7874603496","user_id":"1820","service_id":11763,"time":"","job_location":"test","user_rating":0},
+        message=Request Service}*/
